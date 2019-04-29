@@ -6,11 +6,12 @@
     <body>
       @include('layouts.header')
 
-      @include('layouts.categories')
+      {{-- @include('layouts.categories') --}}
 
 	  <div class="site-output">
-      	@yield('leftbar')
-        
+    {{-- @if(auth::check()) --}}
+      	@include('layouts.leftbar')
+    {{-- @endif         --}}
         @yield('content')
         
       </div>

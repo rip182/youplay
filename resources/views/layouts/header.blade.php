@@ -10,7 +10,7 @@
                     	<i class="fa fa-close"></i>
                     </a>
                     <div id="logo">
-                        <a href="01-home.html"><img src="img/logo.png" alt=""></a>
+                        <a href="/"><img src="img/logo1.png" alt=""></a>
                     </div>
                 </div><!-- // col-md-2 -->
                 <div class="col-lg-3 col-md-3 col-sm-6 hidden-xs hidden-sm">
@@ -140,7 +140,7 @@
 					  <div class="dropdown">
                         <a data-toggle="dropdown" href="#" class="user-area">
                             <div class="thumb"><img src="demo_img/user-1.png" alt=""></div>
-                            <h2>Rabie Elkheir</h2>
+                            <h2>Christian Rey Espera</h2>
                             <h3>25 subscribers</h3>
                             <i class="fa fa-angle-down"></i>
                         </a>
@@ -148,7 +148,7 @@
                            <li><a href="#"><i class="fa fa-edit color-1"></i>Edit profile</a></li>
                            <li><a href="#"><i class="fa fa-video-camera color-2"></i>add video</a></li>
                            <li><a href="#"><i class="fa fa-star color-3"></i>Favorites</a></li>
-                           <li><a href="#"><i class="fa fa-sign-out color-4"></i>sign out</a></li>
+                           <li><a href="/logout" method="post"><i class="fa fa-sign-out color-4"></i>sign out</a></li>
                         </ul>
     				</div>
                 </div>
