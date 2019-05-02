@@ -10,8 +10,9 @@
                     	<i class="fa fa-close"></i>
                     </a>
                     <div id="logo">
-                        <a href="/"><img src="img/logo1.png" alt=""></a>
+                        <a href="/"><img src="/img/logo1.png" alt=""></a>
                     </div>
+
                 </div><!-- // col-md-2 -->
                 <div class="col-lg-3 col-md-3 col-sm-6 hidden-xs hidden-sm">
                     <div class="search-form">
