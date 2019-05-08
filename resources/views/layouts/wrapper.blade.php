@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 
-    @include('layout.head')
+    @include('layouts.head')
 
     <body>
-      @include('layout.header')
+      @include('layouts.header')
 
-      @include('layout.categories')
+      {{-- @include('layouts.categories') --}}
 
 	  <div class="site-output">
-      	@yield('leftbar')
-        
+    {{-- @if(auth::check()) --}}
+      	@include('layouts.leftbar')
+    {{-- @endif         --}}
         @yield('content')
         
       </div>
 
-    @include('layout.jsFooter')
+    @include('layouts.jsFooter')
 
 	</body>
 </html>

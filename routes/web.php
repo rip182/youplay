@@ -12,7 +12,9 @@
 */
 
 Route::get('/','IndexController@index');
-
+Route::get('/video/upload','VideoController@create');
+Route::post('/video/upload/file','VideoController@store');
+Route::get('watch/video','VideoController@show');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
