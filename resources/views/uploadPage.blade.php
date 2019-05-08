@@ -26,6 +26,7 @@
                                 	<label>Post Featured Image</label>
                                     <input id="featured_image" type="file" class="file">
                                 </div> --}}
+                                
                             	<div class="col-md-6">
                                     <button type="submit" id="contact_submit" class="btn btn-dm">Save your post</button>
                                 </div>

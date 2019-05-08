@@ -11,7 +11,7 @@
                         <div class="thumb">
                         	<div class="hover-efect"></div>
                             <small class="time">10:53</small>
-                            <a href="#"><img src="demo_img/v1.png" alt=""></a>
+                            <a href="{{ url('watch/video/'.$video->id) }}"><img src="demo_img/v1.png" alt=""></a>
                         </div>
                         <div class="video-info">
                             <a href="#" class="title">{{ $video->title }}</a>
