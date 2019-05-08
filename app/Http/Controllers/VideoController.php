@@ -14,7 +14,8 @@ class VideoController extends Controller
      */
     public function index()
     {
-        //
+        $videos= video::all();
+        return view('video',compact('videos'));
     }
 
     /**
@@ -35,21 +36,15 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-        // in case you forgot the key to create a data to database is "model::create" method
-        // make a validation but not on this class create another or make middleware and make validation there
+       
 
         // handle the upload
         if($request->hasFile('video'))
         {
-            // get filename with Extention
             $filenameWithExt = $request->file('video')->getClientOriginalName();
-            // just get the file name
             $filename=pathinfo($filenameWithExt,PATHINFO_FILENAME);
-            // just get the file extention
             $extension=$request->file('video')->getClientOriginalExtension();
-            // filename to Store
             $filenameToStore = $filename."_".time().".".$extension;
-            // Upload the video
             $path = $request->file('video')->storeAs('public/videos',$filenameToStore); 
         }
 
@@ -69,9 +64,8 @@ class VideoController extends Controller
      */
     public function show(video $video)
     {
-        $video= video::all();
-        dd($video);
-        return view('watch/video')->compact('video');
+        $videos= video::all();
+        return view('video',compact('videos'));
     }
 
     /**
