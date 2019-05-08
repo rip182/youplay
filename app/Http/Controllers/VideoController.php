@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\video;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 class VideoController extends Controller
 {
     /**
@@ -37,7 +37,7 @@ class VideoController extends Controller
     public function store(Request $request)
     {
        
-
+        
         // handle the upload
         if($request->hasFile('video'))
         {
@@ -51,7 +51,8 @@ class VideoController extends Controller
         video::create([
             'title' => request('title'),
             'body' => request('body'),
-            'video' =>$filenameToStore
+            'video' =>$filenameToStore,
+            'user_id' => auth::id(),
         ]);
         return redirect()->back();
     }
@@ -64,7 +65,9 @@ class VideoController extends Controller
      */
     public function show(video $video)
     {
-        $videos= video::all();
+        $videos= video::find($video->id);
+
+        // dd($videos);
         return view('video',compact('videos'));
     }
 
