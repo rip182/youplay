@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/','IndexController@index');
+Route::get('/','VideoController@index');
 Route::get('/video/upload','VideoController@create');
 Route::post('/video/upload/file','VideoController@store');
 Route::get('watch/video/{video}','VideoController@show');

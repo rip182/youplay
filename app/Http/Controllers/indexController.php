@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Video;
+// use App\User;
 class IndexController extends Controller
 {
     /**
@@ -13,9 +14,9 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $videos = video::all();
-
-        return view('index',compact('videos'));
+        $result = video::all();
+        dd($result->user());
+        return view('index',compact('result'));
     }
 
     /**

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\video;
+use App\video; 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use wapmorgan\MediaFile\MediaFile;
 class VideoController extends Controller
 {
     /**
@@ -15,7 +17,9 @@ class VideoController extends Controller
     public function index()
     {
         $videos= video::all();
-        return view('video',compact('videos'));
+       
+          
+        return view('index',compact('videos','user'));
     }
 
     /**
@@ -47,12 +51,31 @@ class VideoController extends Controller
             $filenameToStore = $filename."_".time().".".$extension;
             $path = $request->file('video')->storeAs('public/videos',$filenameToStore); 
         }
-
+        // get video duration
+        try {
+            $media = MediaFile::open(public_path('/storage/videos/'.$filenameToStore));
+            
+            if ($media->getVideo()){
+              $video = $media->getVideo();
+              // calls to VideoAdapter interface
+              $totalTime = intval($video->getLength().PHP_EOL);
+ 
+              $hour = floor($totalTime / 3600);
+              $minute =floor(($totalTime / 60) % 60);
+              $seconds = $totalTime%60;
+              $duration =($hour = 0 ?$hour.':':'').($minute = 0 ? '':$minute.':').$seconds;
+            }
+          } catch (wapmorgan\MediaFile\Exceptions\FileAccessException $e) {
+            // FileAccessException throws when file is not a detected media
+          } catch (wapmorgan\MediaFile\Exceptions\ParsingException $e) {
+             echo 'File is propably corrupted: '.$e->getMessage().PHP_EOL;
+          }
         video::create([
             'title' => request('title'),
             'body' => request('body'),
             'video' =>$filenameToStore,
             'user_id' => auth::id(),
+            'duration' => $duration
         ]);
         return redirect()->back();
     }

@@ -17,6 +17,8 @@
         <link rel="stylesheet" href="/css/style.css" />
         <!-- Responsive CSS -->
         <link rel="stylesheet" href="/css/responsive.css" />
+        {{-- video player from plyr.io --}}
+        {{-- <link rel="stylesheet" href="path/to/plyr.css"> --}}
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

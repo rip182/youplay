@@ -14,7 +14,7 @@
     {{-- @endif         --}}
         @yield('content')
         
-      </div>
+    </div>
 
     @include('layouts.jsFooter')
 

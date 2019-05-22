@@ -10,11 +10,12 @@ class video extends Model
         'title',
         'body',
         'video',
-        'user_id'
+        'user_id',
+        'duration'
     ];
 
     public function user()
     {
-        $this->belongsTo('App/User');
+        return $this->belongsTo(User::class);
     }
 }

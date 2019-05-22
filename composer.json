@@ -9,11 +9,17 @@
     "license": "MIT",
     "require": {
         "php": "^7.1.3",
+        "bluemoehre/flac-php": "^1.0",
+        "doctrine/dbal": "^2.9",
         "fideloper/proxy": "^4.0",
         "jeroennoten/laravel-adminlte": "^1.25",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
-        "spatie/laravel-permission": "^2.36"
+        "phansys/getid3": " ^2.1@dev",
+        "spatie/laravel-permission": "^2.36",
+        "wapmorgan/binary-stream": "^0.4.0",
+        "wapmorgan/file-type-detector": "^1.1",
+        "wapmorgan/media-file": "^0.1.4"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
